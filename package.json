@@ -1,0 +1,20 @@
+{
+  "name": "dup-destroy",
+  "version": "1.0.0",
+  "description": "Delete duplicated files",
+  "main": "main.js",
+  "scripts": {
+    "test": "test electron .",
+    "start": "electron ."
+  },
+  "keywords": [
+    "node",
+    "electron",
+    "javascript"
+  ],
+  "author": "ispirett",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^5.0.4"
+  }
+}
