@@ -22,3 +22,13 @@ npm install
 ```
 npm start
 ```
+
+# Want to be a contributor ? Start here
+
+[Let me ccontribute :)](https://github.com/Ispirett/duplicate-destroyer/blob/master/Contribution.md)
+
+### GIT GUIDELINES
+
+#### Branching Model
+
+[GITFLOW](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
