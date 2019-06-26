@@ -1,86 +1,10 @@
 <html lang="en">
+<link rel="stylesheet" href="../css/index.css" />
 
 <head>
     <meta charset="UTF-8" />
 
     <title>Main Window</title>
-
-    <style>
-        .container {
-            display: grid;
-            grid-template: repeat(1, 500px) / repeat(2, 1fr);
-            grid-gap: 10px;
-        }
-        
-        body {
-            background-color: rgb(238, 238, 238);
-        }
-        
-        .center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .heading {
-            color: rgb(33, 106, 116);
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .btn {
-            border: 2px solid gray;
-            width: 300px;
-            height: 50px;
-            background: rgb(33, 106, 116);
-            color: white;
-            border-radius: 2em;
-            font-family: Georgia, "Times New Roman", Times, serif;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-        
-        .input {
-            width: 300px;
-            height: 50px;
-            color: black;
-            border-radius: 2em;
-            font-family: Georgia, "Times New Roman", Times, serif;
-            font-size: 1.1em;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        .error {
-            color: red;
-            background: cornsilk;
-        }
-        
-        .list {
-            position: relative;
-        }
-        
-        .list-files li {
-            border: 1px solid rgb(195, 194, 194);
-            color: rgb(58, 58, 58);
-            border-radius: 0.5em;
-            font-weight: 400;
-            font-size: 1.1em;
-            padding: 0.5em;
-            margin-bottom: 5px;
-            font-family: Georgia, "Times New Roman", Times, serif;
-            list-style: none;
-            list-style-image: url("../../assets/img/file.png");
-        }
-        
-        .list-files li:hover {
-            transition: 0.5s background ease-in;
-            background: rgb(80, 80, 80);
-            color: aliceblue;
-        }
-    </style>
 </head>
 
 <body>
@@ -91,7 +15,6 @@
             <button class="btn" onclick="listFiles()">
           Search
         </button>
-
             <input class="input" id="search" type="text" placeholder="Enter file path here" />
             <br />
             <br />
@@ -127,6 +50,14 @@
             <h1>Files List</h1>
             <h4 class="error" id="error"></h4>
             <ul class="list-files" id="list-files"></ul>
+        </div>
+    </div>
+
+    <div class="duplicated-files-modal" id="files-modal">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <div class="center list">
+            <h2>Duplicated files</h2>
+            <ul class="list-files" id="duplicated-list-files"></ul>
         </div>
     </div>
 

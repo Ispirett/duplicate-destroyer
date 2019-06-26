@@ -27,12 +27,12 @@ app.on("ready", () => {
     mainWindow.loadFile("client/windows/index.html");
 
     /*mainWindow.loadURL(
-                      url.format({
-                        pathname: path.join(__dirname, "index.html"),
-                        protocol: "file:",
-                        slashes: true
-                      })
-                    ); */
+                        url.format({
+                          pathname: path.join(__dirname, "index.html"),
+                          protocol: "file:",
+                          slashes: true
+                        })
+                      ); */
 
     mainWindow.on("ready-to-show", () => {
         mainWindow.show();
