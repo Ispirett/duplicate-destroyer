@@ -29,7 +29,13 @@ function searchField() {
 
 function showDuplicatedFiles(path) {
     fs.readdir(path, (errors, files) => {
-        console.log(files);
+        //console.log(files);
+        let parent = document.getElementById("duplicated-list-files");
+        files.forEach(file => {
+            let li = document.createElement("li");
+            li.classList.add("file-name");
+            parent.appendChild(li).innerHTML = file;
+        });
     });
 }
 
@@ -57,6 +63,7 @@ function readDirectory(directory) {
 
 const listFiles = () => {
     // Start point
+    deletePreviousSearch();
     searchField();
     let folder = document.getElementById("search").value; // get user folder name
     let directory = path.join(homePath, folder); // join folder to home path
