@@ -28,7 +28,6 @@ function searchField() {
 }
 
 function showDuplicatedFiles(path) {
-    showDuplicatesModal();
     fs.readdir(path, (errors, files) => {
         console.log(files);
     });
@@ -47,7 +46,7 @@ function readDirectory(directory) {
 
             li.onclick = function() {
                 // handle duplicates
-
+                showDuplicatesModal();
                 showDuplicatedFiles(directory);
             };
 
@@ -69,12 +68,6 @@ const listFiles = () => {
 function showDuplicatesModal() {
     let dupModal = document.getElementById("files-modal");
     let closeBtn = document.getElementById("close-btn");
-    let Btn = document.getElementById("test");
-
-    Btn.onclick = function() {
-        dupModal.display = "block";
-        console.log("show duplicates");
-    };
 
     dupModal.style.display = "block";
 
