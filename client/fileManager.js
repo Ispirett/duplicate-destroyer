@@ -13,8 +13,8 @@ function handleError(error, index) {
     }, 3000);
 }
 
-function deletePreviousSearch() {
-    let element = document.getElementById("list-files");
+function deletePreviousSearch(id) {
+    let element = document.getElementById(id);
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
@@ -27,14 +27,21 @@ function searchField() {
     console.log(Capitalize);
 }
 
-function showDuplicatedFiles(path) {
+function showDuplicatedFiles(path, clickedFileName) {
+    deletePreviousSearch('duplicated-list-files');
     fs.readdir(path, (errors, files) => {
         //console.log(files);
         let parent = document.getElementById("duplicated-list-files");
+        // Check file name against other file names and return duplicated files.
         files.forEach(file => {
             let li = document.createElement("li");
             li.classList.add("file-name");
-            parent.appendChild(li).innerHTML = file;
+            console.log(file.match(clickedFileName));
+
+            if (file.match(clickedFileName)) {
+
+                parent.appendChild(li).innerHTML = file;
+            }
         });
     });
 }
@@ -50,10 +57,11 @@ function readDirectory(directory) {
             let li = document.createElement("li");
             li.classList.add("file-name");
 
-            li.onclick = function() {
+            li.onclick = function(e) {
                 // handle duplicates
+                clickedFileName = e.target.innerHTML
                 showDuplicatesModal();
-                showDuplicatedFiles(directory);
+                showDuplicatedFiles(directory, clickedFileName);
             };
 
             filesContainer.appendChild(li).innerHTML = file;
@@ -63,7 +71,7 @@ function readDirectory(directory) {
 
 const listFiles = () => {
     // Start point
-    deletePreviousSearch();
+    deletePreviousSearch("list-files");
     searchField();
     let folder = document.getElementById("search").value; // get user folder name
     let directory = path.join(homePath, folder); // join folder to home path
