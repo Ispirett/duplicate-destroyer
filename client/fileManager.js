@@ -27,8 +27,20 @@ function searchField() {
     console.log(Capitalize);
 }
 
+function deleteFile(path, file) {
+    alert(`file is going to be deleted ${path + "/" + file}`);
+    try {
+        handleFileToDelete =
+            process.platform == "win32" ? path + "\\" + file : path + "/" + file;
+        console.log(handleFileToDelete);
+        fs.unlinkSync(handleFileToDelete);
+    } catch (error) {
+        alert(error);
+    }
+}
+
 function showDuplicatedFiles(path, clickedFileName) {
-    deletePreviousSearch('duplicated-list-files');
+    deletePreviousSearch("duplicated-list-files");
     fs.readdir(path, (errors, files) => {
         //console.log(files);
         let parent = document.getElementById("duplicated-list-files");
@@ -38,8 +50,12 @@ function showDuplicatedFiles(path, clickedFileName) {
             li.classList.add("file-name");
             console.log(file.match(clickedFileName));
 
-            if (file.match(clickedFileName)) {
+            // When file is clicked delete item.
+            li.onclick = () => {
+                deleteFile(path, file);
+            };
 
+            if (file.includes(clickedFileName)) {
                 parent.appendChild(li).innerHTML = file;
             }
         });
@@ -59,7 +75,7 @@ function readDirectory(directory) {
 
             li.onclick = function(e) {
                 // handle duplicates
-                clickedFileName = e.target.innerHTML
+                clickedFileName = e.target.innerHTML;
                 showDuplicatesModal();
                 showDuplicatedFiles(directory, clickedFileName);
             };
