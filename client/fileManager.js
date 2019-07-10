@@ -28,14 +28,17 @@ function searchField() {
 }
 
 function deleteFile(path, file) {
-    alert(`file is going to be deleted ${path + "/" + file}`);
-    try {
-        handleFileToDelete =
-            process.platform == "win32" ? path + "\\" + file : path + "/" + file;
-        console.log(handleFileToDelete);
-        fs.unlinkSync(handleFileToDelete);
-    } catch (error) {
-        alert(error);
+    //Reaffirms if the user is sure about deleting the file
+    if(confirm(`file is going to be deleted ${path + "/" + file}`))
+    {
+        try {
+            handleFileToDelete =
+                process.platform == "win32" ? path + "\\" + file : path + "/" + file;
+            console.log(handleFileToDelete);
+            fs.unlinkSync(handleFileToDelete);
+        } catch (error) {
+            alert(error);
+        }
     }
 }
 
