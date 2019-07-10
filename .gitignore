@@ -1,2 +1,5 @@
 node_modules
 .idea
+
+#OSX devil file
+.DS_Store
