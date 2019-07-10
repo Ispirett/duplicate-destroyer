@@ -97,12 +97,15 @@ const listFiles = () => {
 // TODO place in separate file
 
 function showDuplicatesModal() {
+    let dupParent = document.getElementById("dup-parent");
     let dupModal = document.getElementById("files-modal");
     let closeBtn = document.getElementById("close-btn");
 
+    dupParent.style.display = "block";
     dupModal.style.display = "block";
 
     closeBtn.onclick = function() {
+        dupParent.style.display = "none";
         dupModal.style.display = "none";
         console.log("working");
     };

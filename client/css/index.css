@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 .container {
     display: grid;
     grid-template: repeat(1, 500px) / repeat(2, 1fr);
@@ -5,7 +6,11 @@
 }
 
 body {
-    background-color: rgb(238, 238, 238);
+    background: linear-gradient(to bottom, #4ca1af, #2c3e50);
+    background-repeat: round;
+    background-size: contain;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
 }
 
 .center {
@@ -24,14 +29,20 @@ body {
 
 .btn {
     border: 2px solid gray;
+    outline: none;
+    color: #4ca1af;
     width: 300px;
     height: 50px;
-    background: rgb(33, 106, 116);
-    color: white;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(228, 228, 233));
     border-radius: 2em;
-    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 1.1em;
     font-weight: 600;
+    box-shadow: 0 7px 14px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-image: linear-gradient(rgb(216, 215, 215), rgb(156, 156, 156));
 }
 
 .input {
@@ -40,10 +51,10 @@ body {
     margin-top: 1em;
     color: black;
     border-radius: 0.5em;
-    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 1.1em;
     font-weight: 600;
     text-align: center;
+    box-shadow: 0 7px 14px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
 }
 
 .error {
@@ -57,29 +68,44 @@ body {
 
 .list-files li,
 .duplicated-list-files li {
-    border: 1px solid rgb(195, 194, 194);
-    color: rgb(58, 58, 58);
+    border: 0.5px solid rgb(228, 228, 228);
     border-radius: 0.5em;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.1em;
     padding: 0.5em;
-    margin-bottom: 5px;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-bottom: 8px;
     list-style: none;
     list-style-image: url("../../assets/img/file.png");
+    box-shadow: 0 7px 14px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
 }
 
 .list-files li:hover,
 .duplicated-list-files li:hover {
-    transition: 0.5s background ease-in;
+    transition: 0.3s background ease-in;
     background: rgb(80, 80, 80);
     color: aliceblue;
+    cursor: pointer;
 }
 
 
 /* duplicated-files-modal*/
 
+.dup-parent {
+    display: none;
+    width: 100%;
+    background: rgba(82, 82, 82, 0.52);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-radius: 1em;
+}
+
 .duplicated-files-modal {
+    background: linear-gradient(to bottom, #4ca1af, #2c3e50);
+    border: 1px solid lightgray;
     display: none;
     position: fixed;
     z-index: 1;
@@ -89,7 +115,6 @@ body {
     width: 60%;
     overflow: auto;
     border-radius: 1em;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 
