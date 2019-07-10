@@ -50,9 +50,9 @@ const mainMenuTemplate = [{
             label: "Search Directory"
         },
         {
-            label: "History",
+            label: "GitHub",
             click() {
-                shell.openExternal("http://facebook.com");
+                shell.openExternal("https://github.com/Ispirett/duplicate-destroyer");
             }
         },
         {

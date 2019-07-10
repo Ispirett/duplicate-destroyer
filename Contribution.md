@@ -21,9 +21,14 @@ git branch -a
 
 git checkout branch-name
 
-
-
 ```
+
+### Important!!!
+
+##### Never push to master!
+
+- Create new branch from development branch as this will be the most updated branch.
+- Make pull request to development branch
 
 ### GIT GUIDELINES
 
