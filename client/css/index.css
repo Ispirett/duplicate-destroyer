@@ -11,6 +11,8 @@ body {
     background-size: contain;
     color: white;
     font-family: "Noto Sans", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .center {
