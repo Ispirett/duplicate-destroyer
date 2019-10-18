@@ -1,5 +1,7 @@
 <html lang="en">
 <link rel="stylesheet" href="../css/index.css" />
+<link rel="stylesheet" href="../../node_modules/material-design-icons/iconfont/material-icons.css">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -10,12 +12,15 @@
 <body>
     <div class="container">
         <div class="center">
-            <h4>Enter a Folder name example: Documents Or Documents/pictures</h4>
+            
             <h1>Welcome</h1>
-            <button class="btn" onclick="listFiles()">
-          Search
-        </button>
+            
             <input class="input" id="search" type="text" placeholder="Enter file path here" />
+            <button class="btn" onclick="listFiles()">
+                <i class="material-icons">search</i>
+            </button>
+
+            
             <br />
             <br />
             <h2>System info</h2>
