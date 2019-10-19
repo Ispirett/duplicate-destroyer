@@ -12,49 +12,62 @@
 <body>
     <div class="container">
         <div class="center">
+            <div class="search-form">
+                <h1>Welcome</h1>
+                <div class="search-btn">
+                    <input class="input" id="search" type="text" placeholder="Enter file path here" />
+                    <button class="btn" onclick="listFiles()">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+                <p>Enter a folder name, example: Documents OR Documents/pictures</p>
+
+            </div>
             
-            <h1>Welcome</h1>
             
-            <input class="input" id="search" type="text" placeholder="Enter file path here" />
-            <button class="btn" onclick="listFiles()">
-                <i class="material-icons">search</i>
-            </button>
 
             
+            
             <br />
             <br />
-            <h2>System info</h2>
-            <ul>
-                <li>
-                    USER:
-                    <script>
-                        document.write(process.env.USER);
-                    </script>
-                </li>
-                <li>
-                    OS:
-                    <script>
-                        document.write(process.platform);
-                    </script>
-                </li>
-                <li>
-                    CHROME:
-                    <script>
-                        document.write(process.versions.chrome);
-                    </script>
-                </li>
-                <li>
-                    NODE:
-                    <script>
-                        document.write(process.version);
-                    </script>
-                </li>
-            </ul>
+            <div class="system-info">
+                <h2>System info</h2>
+                <ul>
+                    <li>
+                        USER:
+                        <script>
+                            document.write(process.env.USER);
+                        </script>
+                    </li>
+                    <li>
+                        OS:
+                        <script>
+                            document.write(process.platform);
+                        </script>
+                    </li>
+                    <li>
+                        CHROME:
+                        <script>
+                            document.write(process.versions.chrome);
+                        </script>
+                    </li>
+                    <li>
+                        NODE:
+                        <script>
+                            document.write(process.version);
+                        </script>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
         <div class="center list">
-            <h1>Files List</h1>
-            <h4 class="error" id="error"></h4>
-            <ul class="list-files" id="list-files"></ul>
+            <div class="list-container">
+                <h1>Files List</h1>
+                <h4 class="error" id="error"></h4>
+                <ul class="list-files" id="list-files"></ul>
+            </div>
+            
         </div>
     </div>
 
