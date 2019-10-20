@@ -1,5 +1,7 @@
 <html lang="en">
 <link rel="stylesheet" href="../css/index.css" />
+<link rel="stylesheet" href="../../node_modules/material-design-icons/iconfont/material-icons.css">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -10,46 +12,62 @@
 <body>
     <div class="container">
         <div class="center">
-            <h4>Enter a Folder name example: Documents Or Documents/pictures</h4>
-            <h1>Welcome</h1>
-            <button class="btn" onclick="listFiles()">
-          Search
-        </button>
-            <input class="input" id="search" type="text" placeholder="Enter file path here" />
+            <div class="search-form">
+                <h1>Welcome</h1>
+                <div class="search-btn">
+                    <input class="input" id="search" type="text" placeholder="Enter file path here" />
+                    <button class="btn" onclick="listFiles()">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+                <p>Enter a folder name, example: Documents OR Documents/pictures</p>
+
+            </div>
+            
+            
+
+            
+            
             <br />
             <br />
-            <h2>System info</h2>
-            <ul>
-                <li>
-                    USER:
-                    <script>
-                        document.write(process.env.USER);
-                    </script>
-                </li>
-                <li>
-                    OS:
-                    <script>
-                        document.write(process.platform);
-                    </script>
-                </li>
-                <li>
-                    CHROME:
-                    <script>
-                        document.write(process.versions.chrome);
-                    </script>
-                </li>
-                <li>
-                    NODE:
-                    <script>
-                        document.write(process.version);
-                    </script>
-                </li>
-            </ul>
+            <div class="system-info">
+                <h2>System info</h2>
+                <ul>
+                    <li>
+                        USER:
+                        <script>
+                            document.write(process.env.USER);
+                        </script>
+                    </li>
+                    <li>
+                        OS:
+                        <script>
+                            document.write(process.platform);
+                        </script>
+                    </li>
+                    <li>
+                        CHROME:
+                        <script>
+                            document.write(process.versions.chrome);
+                        </script>
+                    </li>
+                    <li>
+                        NODE:
+                        <script>
+                            document.write(process.version);
+                        </script>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
         <div class="center list">
-            <h1>Files List</h1>
-            <h4 class="error" id="error"></h4>
-            <ul class="list-files" id="list-files"></ul>
+            <div class="list-container">
+                <h1>Files List</h1>
+                <h4 class="error" id="error"></h4>
+                <ul class="list-files" id="list-files"></ul>
+            </div>
+            
         </div>
     </div>
 
