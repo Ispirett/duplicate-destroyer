@@ -5,6 +5,8 @@ const path = require("path");
 
 const homePath = process.env.HOME; //get home path from computer
 
+let dupParent = document.getElementById("dup-parent");
+
 function handleError(error, index) {
     let errorMsg = error.toString().split(":")[index];
     document.getElementById("error").innerHTML = errorMsg;
@@ -35,7 +37,12 @@ function deleteFile(path, file) {
             handleFileToDelete =
                 process.platform == "win32" ? path + "\\" + file : path + "/" + file;
             console.log(handleFileToDelete);
-            fs.unlinkSync(handleFileToDelete);
+
+            fs.unlink(handleFileToDelete,(err)=>{
+                listFiles();
+                dupParent.style.display ='none'
+            });
+
         } catch (error) {
             alert(error);
         }
@@ -75,7 +82,6 @@ function readDirectory(directory) {
         files.forEach(file => {
             let li = document.createElement("li");
             li.classList.add("file-name");
-
             li.onclick = function(e) {
                 // handle duplicates
                 clickedFileName = e.target.innerHTML;
@@ -100,7 +106,7 @@ const listFiles = () => {
 // TODO place in separate file
 
 function showDuplicatesModal() {
-    let dupParent = document.getElementById("dup-parent");
+
     let dupModal = document.getElementById("files-modal");
     let closeBtn = document.getElementById("close-btn");
 

@@ -14,6 +14,8 @@ const { app, BrowserWindow, Menu, shell } = electron;
 let mainWindow;
 
 const settings = {
+    minWidth: 1000,
+    minHeight:800,
     width: 1050,
     height: 800,
     webPreferences: {
