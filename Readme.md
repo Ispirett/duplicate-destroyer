@@ -1,6 +1,6 @@
 # Duplicate Destroyer
 
-## Delete duplicated files
+##### Duplicate Destroyer allows users to delete duplicated files on there computer.
 
 #### features
 
@@ -9,6 +9,9 @@
 - Delete duplicated files in directory /// Comming soon!!
 - Click on any file and get a list of the duplicated files including that file itself.
 
+### Built with 
+- Electron 
+- Javascript
 ### Lauch application
 
 - Clone repository
