@@ -1,6 +1,6 @@
 # Duplicate Destroyer
 
-##### Duplicate Destroyer allows users to delete duplicated files on there computer.
+##### Duplicate Destroyer allows users to delete duplicated files on their computer.
 
 #### features
 
